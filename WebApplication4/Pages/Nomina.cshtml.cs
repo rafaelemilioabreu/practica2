@@ -85,20 +85,6 @@ namespace WebApplication4.Pages
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public void OnGet(int ars)
 
         {
@@ -114,7 +100,7 @@ namespace WebApplication4.Pages
             apellidos.Add("Carrasco");
             apellidos.Add("Rodriguez");
 
-            cargo.Add("Diseñador");
+            cargo.Add("DiseÃ±ador");
             cargo.Add("Programador");
             cargo.Add("Analista");
             cargo.Add("Auditor");
