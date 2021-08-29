@@ -1,0 +1,71 @@
+﻿@page
+@model WebApplication4.Pages.NominaModel
+@{
+
+}
+
+
+<h1>
+    Nominas
+</h1>
+
+<form method="get">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Salario Mensual</th>
+                <th scope="col">Descuento AFP</th>
+                <th scope="col">Descuento ARS</th>
+                <th scope="col">Descuento ISR</th>
+                <th scope="col">Total de Descuentos</th>
+                <th scope="col">Salario Neto</th>
+               
+
+            </tr>
+        </thead>
+        <tbody>
+
+
+
+            @for (int i = 0; i < Model.nombres.Count; i++)
+            {
+
+
+
+                <tr>
+
+
+                    <th scope="row">@(i + 1)</th>
+                    <td>@Model.nombres[i]</td>
+                    <td>@Model.apellidos[i]</td>
+                    <td>@Model.cargo[i]</td>
+                    <td>@Model.salario[i]</td>
+                    <td>@Model.AFS((Model.salario[i]))</td>
+                    <td>@Model.ARS((Model.salario[i]))</td>
+                    <td>@Model.IRS((Model.salario[i]))</td>
+                    <td>@Model.Total(Model.AFS(Model.salario[i]), Model.ARS(Model.salario[i]),Model.IRS(Model.salario[i]))</td>
+                    <td>@Model.Neto(Model.salario[i], Model.ARS(Model.salario[i]),Model.IRS(Model.salario[i]), Model.AFS(Model.salario[i]))</td>
+                   
+
+
+
+
+
+                </tr>
+
+
+
+            }
+
+
+
+
+        </tbody>
+    </table>
+
+</form>
